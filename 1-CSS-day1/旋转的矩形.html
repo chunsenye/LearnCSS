@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>旋转的矩形</title>
+</head>
+<style>
+  html,body{
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(#aaa,#666);
+    }
+    .box{
+        width: 200px;
+        height: 200px;
+        position: relative;
+    }
+    .box span{
+        border: 10px solid khaki;
+        position: absolute;
+        animation: r linear infinite;
+    }
+    .box span:nth-child(1){
+        width: 100%;
+        height: 100%;
+        animation-duration: 5s;
+        z-index: 3;
+    }
+    .box span:nth-child(2){
+        width: 70%;
+        height: 70%;
+        margin: 15%;
+        animation-duration: 2s;
+        z-index: 2;
+    }
+    .box span:nth-child(3){
+        width: 40%;
+        height: 40%;
+        margin: 30%;
+        animation-duration: 1s;
+        z-index: 1;
+    }
+    .box span::before,
+    .box span::after{
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 60%;
+        background: #000;
+    }
+    .box span::before{
+        left: -10px;
+        top: -10px;
+    }
+    .box span::after{
+        right: -10px;
+        bottom: -10px;
+    }
+    @keyframes r{
+        0%{transform: rotateY(0deg)}
+        100%{transform: rotateY(360deg)}
+    }
+</style>
+<body>
+    <div class="box">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+</html>
