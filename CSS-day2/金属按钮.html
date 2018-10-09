@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>金属按钮</title>
+</head>
+<style>
+    html,body{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(#aaa,#fff);
+    }
+    .box{
+        background: linear-gradient(to left,purple,pink);
+        color: white;
+        width: 250px;
+        height: 80px;
+        text-align: center;
+        line-height: 80px;
+        font-size: 30px;
+        font-family: sans-serif;
+        letter-spacing: 0.2em;
+        border-radius: 2em;
+        /* border: 1px solid yellowgreen; */
+        text-shadow: 6px 3px 2px rgba(0, 0, 0, 0.2);
+        box-shadow: 2px 0 0 5px rgba(0, 0, 0, 0.2);
+        transform: perspective(500px) rotateY(-15deg);
+        transition: 0.5s;
+        position: relative;
+        overflow: hidden;
+    }
+    .box:hover{
+        transform: perspective(500px) rotateY(15deg);
+        text-shadow: -6px 3px 2px rgba(0, 0, 0, 0.2);
+        box-shadow: -2px 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+    .box::before{
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right,transparent,white,transparent);
+        left: -100%;
+        transition: 0.5s;
+    }
+    .box:hover::before{
+        left: 100%;
+    }
+</style>
+<body>
+    <div class="box">
+        BUTTON
+    </div>
+</body>
+</html>
