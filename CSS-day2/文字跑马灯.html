@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,15 +23,61 @@
         line-height: 100px;
         font-size: 32px;
         font-family: sans-serif;
+        font-weight: bold;
+        white-space: nowrap;
+        overflow: hidden;
+        position: relative;
+    }
+    .box .inner:first-child{
+        background: linear-gradient(to left, #222,#000);
+        color: #aaa;
+        transform-origin: left;
+        transform: perspective(300px) rotateY(-67.3deg);
+    }
+    .box .inner:last-child{
+        background: linear-gradient(to right, #222,#fff);
+        color: #fff;
+        transform-origin: right;
+        transform: perspective(300px) rotateY(67.3deg)
+    }
+    .box .inner span{
+        position: absolute;
+        animation: marquee 5s linear infinite;
+    }
+    .box .inner:first-child span{
+        animation-delay: 2.5s;
+        left: -100%;
+    }
+    /* .box .inner::before{
+        content: '';
+        position: absolute;
+        width: 200px;
+        height: 100px;
+        background: linear-gradient(to right,transparent,white,transparent);
+        left: 0;
+        top: 0px;
+        animation: light 1s linear infinite;  
+    }
+    .box .inner:first-child:before{
+        animation-delay: 0.5s;
+        left: -100%;
+    } */
+    @keyframes marquee{
+        0%{left: 100%;}
+        100%{left: -100%;}
+    }
+    @keyframes light{
+        0%{left: 100%;}
+        100%{left: -100%;}
     }
 </style>
 <body>
     <div class="box">
         <div class="inner">
-            <span>Hello CSS</span>
+            <span>Bob Seger !</span>
         </div>
         <div class="inner">
-            <span>Hello CSS</span>
+            <span>Bob Seger !</span>
         </div>
     </div>
 </body>
