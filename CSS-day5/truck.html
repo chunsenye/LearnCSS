@@ -1,12 +1,174 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>truck</title>
 </head>
+<style>
+    body {
+        margin: 20%;
+        padding-top: 10%;
+    }
+
+    .truck {
+        width: 15em;
+        height: 5em;
+        font-size: 40px;
+        background: #444;
+        border-radius: 0.4em;
+    }
+
+    .truck {
+        position: relative;
+    }
+
+    .truck::before,
+    .truck::after {
+        content: '';
+        position: absolute;
+        box-sizing: border-box;
+        width: 2em;
+        height: 2em;
+        background-color: #444;
+        border: 0.1em solid white;
+        border-radius: 50%;
+        bottom: -1em;
+    }
+
+    .truck::before {
+        left: 0.6em;
+    }
+
+    .truck::after {
+        right: 0.6em;
+    }
+
+    .cab {
+        position: absolute;
+        width: 3.3em;
+        height: 2.5em;
+        background-color: #333;
+        left: -3.5em;
+        bottom: 0;
+        border-radius: 40% 0 0.4em 0.4em;
+    }
+
+    .cab::before {
+        content: '';
+        position: absolute;
+        width: 2em;
+        height: 1.5em;
+        background-color: #333;
+        top: -1.5em;
+        right: 0;
+        border-radius: 100% 0 0 0;
+    }
+
+    .cab::after {
+        content: '';
+        position: absolute;
+        box-sizing: border-box;
+        width: 2em;
+        height: 2em;
+        background-color: #444;
+        border: 0.1em solid white;
+        border-radius: 50%;
+        bottom: -1em;
+        left: 0.5em;
+    }
+
+    .smoke,
+    .smoke::before,
+    .smoke::after {
+        content: '';
+        position: absolute;
+        width: 1em;
+        height: 1em;
+        background-color: #333;
+        right: -0.1em;
+        bottom: -0.5em;
+        border-radius: 50%;
+    }
+
+    .smoke {
+        animation: smoke-1 2s infinite;
+    }
+
+    .smoke::before {
+        animation: smoke-2 2s infinite;
+    }
+
+    .smoke::after {
+        animation: smoke-3 2s infinite;
+    }
+
+    @keyframes smoke-1 {
+        to {
+            width: 3em;
+            height: 3em;
+            right: -3em;
+            bottom: 0.5em;
+        }
+    }
+
+    @keyframes smoke-2 {
+        to {
+            width: 2.5em;
+            height: 2.5em;
+            right: -6em;
+            bottom: 0.8em;
+        }
+    }
+
+    @keyframes smoke-3 {
+        to {
+            width: 3.5em;
+            height: 3.5em;
+            right: -4em;
+            bottom: 0.2em;
+        }
+    }
+
+    .smoke {
+        animation:
+            drift 2s infinite,
+            smoke-1 2s infinite;
+    }
+
+    .smoke::before {
+        animation:
+            drift 3s infinite,
+            smoke-2 3s infinite;
+    }
+
+    .smoke::after {
+        animation:
+            drift 4s infinite,
+            smoke-3 4s infinite;
+    }
+
+    @keyframes drift {
+
+        0%,
+        100% {
+            filter: opacity(0);
+        }
+
+        15% {
+            filter: opacity(0.9);
+        }
+    }
+</style>
+
 <body>
-    
+    <div class="truck">
+        <span class="cab"></span>
+        <span class="smoke"></span>
+    </div>
+    <hr>
 </body>
+
 </html>
