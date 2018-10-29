@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>chaplin</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .chaplin {
+        width: 40em;
+        height: 30em;
+        font-size: 10px;
+        background: #eee;
+        box-shadow: 0 0 3em rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        color: #555;
+    }
+    .hat{
+        position: absolute;
+        width: 6.4em;
+        height: 4.6em;
+        background-color: #555;
+        border-radius: 2.3em 2.3em 0 0;
+    }
+    .hat::before{
+        content: '';
+        position: absolute;
+        width: 10em;
+        height: 0.8em;
+        background-color: #555;
+        border-radius: 0.4em;
+        left: calc((100% - 10em) / 2);
+        top: calc(100% + 0.4em);
+    }
+</style>
+
+<body>
+    <figure class='chaplin'>
+        <span class="hat"></span>
+        <span class="beard"></span>
+        <span class="stick"></span>
+    </figure>
+</body>
+
+</html>
