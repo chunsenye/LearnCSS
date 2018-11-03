@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>盒子模型示例</title>
+</head>
+<style>
+    .box1{
+        width: 200px;
+        height: 200px;
+        padding: 50px;
+        margin: 50px;
+        border: 2px solid cornsilk;
+        background-color: gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .box2{
+        box-sizing: border-box;
+    }
+    .box3{
+        box-sizing: content-box;
+    }
+    .box4{
+        box-sizing: inherit;
+    }
+    .box5{
+        box-sizing: initial;
+    }
+    .box6{
+        box-sizing: unset;
+    }
+</style>
+<body>
+    <h3>盒子模型（box model）</h3>
+    <p>一个盒子的主要属性有五个：width、height、padding、margin、border</p>
+    <p>width、height:内容的宽度、高度</p>
+    <p>padding：内边距</p>
+    <p>border：边框</p>
+    <p>margin：外边距</p>
+
+    <h3>示例1</h3>
+    <div class="box1">
+
+    </div>
+    <div class="box1 box2">
+        box-sizing: border-box;
+    </div>
+    <div class="box1 box3">
+        box-sizing: content-box;
+    </div>
+    <div class="box1 box4">
+        box-sizing: inherit;
+    </div>
+    <div class="box1 box5">
+        box-sizing: initial;
+    </div>
+    <div class="box1 box6">
+        box-sizing: unset;
+    </div>
+</body>
+</html>
