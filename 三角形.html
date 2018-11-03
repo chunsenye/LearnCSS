@@ -32,6 +32,26 @@
         border:100px solid white;
         border-top-color: aquamarine;    
     }
+    .heart2{
+        width: 0;
+        height: 0;
+        border:100px solid white;
+        border-top-color: red;
+        border-bottom: none;
+    }
+    .heart1{
+        width: 200px;
+        height: 80px;
+        background: white;
+        overflow: hidden;
+    }
+    .heart1 .left,.heart1 .right{
+        width: 100px;
+        height: 100px;
+        background: red;
+        float: left;
+        border-radius: 50% 50% 0 0;
+    }
 </style>
 <body>
     <p>利用border属性来画三角形</p>
@@ -40,5 +60,11 @@
     <div class="triangle2"></div>
     <br>
     <div class="triangle3"></div>
+    <p>利用border属性来画爱心</p>
+    <div class="heart1">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+    <div class="heart2"></div>
 </body>
 </html>
